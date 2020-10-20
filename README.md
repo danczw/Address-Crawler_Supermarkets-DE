@@ -18,5 +18,6 @@ Latest results include ~40k addresses:
 - 5478 for Edeka
 - 1468 for Edeka Center
 - 700 for Kaufland
-- 372 for Netto 
-*Total: 40617*
+- 372 for Netto
+ 
+_Total: 40617_
