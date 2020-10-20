@@ -8,11 +8,13 @@ Results are saved into a csv file at the script directory. - Happy crawling.
 """
 
 # TODO: work on coding to handle öäü
+# TODO: add code comments
 
 import urllib.request
 from urllib.error import HTTPError
 from bs4 import BeautifulSoup
 import os
+from datetime import date
 import re
 import pandas as pd
 
@@ -67,5 +69,9 @@ for supermarkt_url in url:
 print(f"Filialen gefunden: {len(address_list)}")
 
 df = pd.DataFrame(data=address_list, columns=["Address"])
-df.to_csv(f"{dir_path}\\supermarkt_filialen.csv", sep=";")  # save data to excel
+
+today = date.today()
+today_date = today.strftime(r"%Y%m%d")
+
+df.to_csv(f"{dir_path}\\{today_date}_supermarkt_filialen.csv", sep=";")  # save data to excel
 print(f"Excel printed to {dir_path}!") # show file location
