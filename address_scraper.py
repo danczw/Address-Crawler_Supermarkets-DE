@@ -100,5 +100,5 @@ print(f"Filialen gefunden: {df.shape}") # total number of addresses
 today = date.today()
 today_date = today.strftime(r"%Y%m%d")
 
-df.to_csv(f"{dir_path}\\{today_date}_supermarkt_filialen.json")  # save data to excel
+df.to_csv(f"{dir_path}\\{today_date}_supermarkt_filialen.csv")  # save data to excel
 print(f"File printed to {dir_path}!") # show file location
