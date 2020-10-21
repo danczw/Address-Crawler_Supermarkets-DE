@@ -73,5 +73,5 @@ df = pd.DataFrame(data=address_list, columns=["Address"])
 today = date.today()
 today_date = today.strftime(r"%Y%m%d")
 
-df.to_csv(f"{dir_path}\\{today_date}_supermarkt_filialen.csv", sep=";")  # save data to excel
-print(f"Excel printed to {dir_path}!") # show file location
+df.to_json(f"{dir_path}\\{today_date}_supermarkt_filialen.json")  # save data to excel
+print(f"Json printed to {dir_path}!") # show file location
