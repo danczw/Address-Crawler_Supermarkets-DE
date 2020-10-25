@@ -82,6 +82,7 @@ for supermarkt_url in url: # crawl for each supermarket chain url
                 reg_result = supermarket_regex.search(i)
                 try:
                     x = remove_umlaut(reg_result.group()[7:-1])
+                    x = x.replace("&amp", "und")
                     address_list.append(x)
                     counter += 1
                 except AttributeError:
