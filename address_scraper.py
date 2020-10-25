@@ -5,8 +5,6 @@ for specific supermarket companies as per defined below.
 Results are saved into a csv file at the script directory. - Happy crawling.
 """
 
-# TODO: work on coding to handle öäü
-
 import urllib.request
 from urllib.error import HTTPError
 from bs4 import BeautifulSoup
@@ -49,6 +47,7 @@ url = ["https://www.meinprospekt.de/filialen/rewe-de/", "https://www.meinprospek
     "https://www.meinprospekt.de/filialen/norma-de/", "https://www.meinprospekt.de/filialen/real-de/", "https://www.meinprospekt.de/filialen/edeka/", \
     "https://www.meinprospekt.de/filialen/edekacenter-de/", "https://www.meinprospekt.de/filialen/kaufland/", "https://www.meinprospekt.de/filialen/netto1-de/"]
 
+# bs4 setup
 user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'  # user agent
 headers = {'User-Agent': user_agent}  # add user agent to request header
 
@@ -95,10 +94,10 @@ for supermarkt_url in url: # crawl for each supermarket chain url
 df = pd.DataFrame(data=address_list, columns=["Address"])
 df.drop_duplicates(inplace=True)
 
-print(f"Filialen gefunden: {df.shape}") # total number of addresses
+print(f"Supermarket addresses found: {df.shape}") # total number of addresses
 
 today = date.today()
 today_date = today.strftime(r"%Y%m%d")
 
-df.to_csv(f"{dir_path}\\{today_date}_supermarkt_filialen.csv")  # save data to excel
+df["Address"].to_csv(f"{dir_path}\\{today_date}_supermarkt_filialen.csv", header=False, index=False)  # save data to excel
 print(f"File printed to {dir_path}!") # show file location
