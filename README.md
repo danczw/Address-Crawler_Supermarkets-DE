@@ -1,4 +1,4 @@
-# address_crawler_supermarkets_DE
+# Address-Crawler_Supermarkets-DE
 
 This script crawls addresses for supermarkets from https://www.meinprospekt.de/filialen/SUPERMARKET-NAME 
 for specific supermarket companies as per defined in the script.
